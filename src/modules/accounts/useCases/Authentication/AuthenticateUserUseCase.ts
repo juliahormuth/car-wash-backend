@@ -12,12 +12,13 @@ interface IResponse {
     user: {
         name: string,
         email: string
-    };
+    },
     token: string
 }
 
 @injectable()
 class AuthenticateUserUseCase {
+    
  constructor(
  @inject("UsersRepository")
  private usersRepository: IUsersRepository
