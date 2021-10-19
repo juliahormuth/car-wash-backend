@@ -17,3 +17,5 @@ class UpdateUserAvatarController {
          return response.status(204).send();
     }
 }
+
+export { UpdateUserAvatarController };
