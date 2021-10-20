@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\jvhor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add express-async-errors
+  C:\Program Files\nodejs\node.exe C:\Users\jvhor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add jest @types/jest -D
 
 PATH: 
   C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\jvhor\AppData\Local\Microsoft\WindowsApps;;C:\Users\jvhor\.dotnet\tools;C:\Users\jvhor\AppData\Roaming\npm;E:\Visual Studio Code\Microsoft VS Code\bin
@@ -31,6 +31,7 @@ npm manifest:
       "bcryptjs": "^2.4.3",
       "csv-parse": "^4.16.3",
       "express": "^4.17.1",
+      "express-async-errors": "^3.1.1",
       "jsonwebtoken": "^8.5.1",
       "multer": "^1.4.3",
       "pg": "^8.7.1",
@@ -1095,6 +1096,11 @@ Lockfile:
     version "1.8.1"
     resolved "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
     integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+  
+  express-async-errors@^3.1.1:
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/express-async-errors/-/express-async-errors-3.1.1.tgz#6053236d61d21ddef4892d6bd1d736889fc9da41"
+    integrity sha512-h6aK1da4tpqWSbyCa3FxB/V6Ehd4EEB15zyQq9qe75OZBp0krinNKuH4rAY+S/U/2I36vdLAUFSjQJ+TFmODng==
   
   express@^4.17.1:
     version "4.17.1"
