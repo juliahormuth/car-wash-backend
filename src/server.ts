@@ -5,13 +5,13 @@ import "reflect-metadata";
 import 'express-async-errors';
 import swaggerFile from './swagger.json';
 
-import { router } from './routes';
+import { router } from './shared/infra/http/routes';
 
 import "./shared/container";
 
 import "./database";
 
-import { AppError } from './errors/AppError';
+import { AppError } from './shared/errors/AppError';
 
 const app =  express();
 

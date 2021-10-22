@@ -1,5 +1,5 @@
-import { User } from '../../entities/User';
-import { IUsersRepository } from "../IUsersRepository";
+import { User } from '../typeorm/entities/User';
+import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { ICreateUserDTO } from "../../dto/ICreateUserDTO";
 import { getRepository, Repository } from "typeorm";
 
