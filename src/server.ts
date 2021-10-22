@@ -9,7 +9,7 @@ import { router } from './shared/infra/http/routes';
 
 import "./shared/container";
 
-import "./database";
+import "./shared/infra/database";
 
 import { AppError } from './shared/errors/AppError';
 
