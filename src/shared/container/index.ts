@@ -10,6 +10,8 @@ import { SpecificationsRepository } from '../../modules/cars/infra/repositories/
 
 import { IUsersRepository } from '../../modules/accounts/repositories/IUsersRepository'
 import { UsersRepository } from '../../modules/accounts/infra/repositories/UsersRepository'
+import { IEmployeesRepository } from 'src/modules/employees/infra/repositories/IEmployeesRepository';
+import { EmployeesRepository } from 'src/modules/employees/infra/repositories/EmployeesRepository';
 
 // ICategoriesRepository para dentro do:
 container.registerSingleton<ICategoriesRepository>(
@@ -25,4 +27,9 @@ container.registerSingleton<ISpecificationsRepository>(
 container.registerSingleton<IUsersRepository>(
     "UsersRepository", 
     UsersRepository
+);
+
+container.registerSingleton<IEmployeesRepository>(
+    "EmployeesRepository", 
+    EmployeesRepository
 );

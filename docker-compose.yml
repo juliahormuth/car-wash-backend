@@ -3,14 +3,14 @@ version: "3.9"
 services:
   database:
     image: postgres
-    container_name: database_ignite
+    container_name: lavarelampago_database
     restart: always
     ports: 
       - 5432:5432
     environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=ignite
-      - POSTGRES_DB=rentx
+      - POSTGRES_USER=julia
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=lavarelampago_db
     volumes:
       - pgdata:/data/postgres
 

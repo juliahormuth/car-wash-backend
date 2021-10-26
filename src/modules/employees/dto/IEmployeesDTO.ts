@@ -1,4 +1,4 @@
-interface ICreateUserDTO {
+interface IEmployeesDTO {
     name: string;
     cpf: string;
     email: string;
@@ -8,4 +8,4 @@ interface ICreateUserDTO {
   }
 
 
-export {ICreateUserDTO}
+export {IEmployeesDTO}
