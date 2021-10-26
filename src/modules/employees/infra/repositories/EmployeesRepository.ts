@@ -22,14 +22,17 @@ class EmployeesRepository implements IEmployeesRepository{
 
         await this.repository.save(user)
     }
+       
+    async findByEmail(email: string): Promise<Employees>{
 
-   /* async findByEmail(email: string): Promise<User> {
-       const user = await this.repository.findOne({ email })
+        const user = await this.repository.findOne({email})
 
-       return user;
+        return user
     }
-*/
-  
+    async list(): Promise<Employees[]> {
+        const employees = await this.repository.find();
+        return employees;
+      }
 }
 
 export { EmployeesRepository}

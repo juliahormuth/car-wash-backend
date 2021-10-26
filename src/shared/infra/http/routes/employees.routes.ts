@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { EmployeesController } from "src/modules/employees/domain/employees.controller";
+import { CreateEmployeesController  } from '../../../../modules/employees/domain/create-employees.controller'
+import { AppError } from 'src/shared/errors/AppError';
 
 
 
@@ -7,10 +8,10 @@ const employeesRouter = Router();
 
 
 
-const employeesController = new EmployeesController();
+const createEmployeesController = new CreateEmployeesController ();
 
 
-employeesRouter.post('/', employeesController.handle)
+employeesRouter.post('/',createEmployeesController.handle)
 
 
 export {employeesRouter}

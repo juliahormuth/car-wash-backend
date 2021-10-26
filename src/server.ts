@@ -11,8 +11,7 @@ import "./shared/container";
 
 import "./shared/infra/database";
 
-import { AppError } from './shared/errors/AppError';
-
+import { AppError } from './shared/errors/AppError'
 const app =  express();
 
 

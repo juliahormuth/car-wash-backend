@@ -4,10 +4,10 @@ import { hash } from "bcryptjs";
 
 import { IEmployeesRepository } from "../infra/repositories/IEmployeesRepository";
 import { IEmployeesDTO } from "../dto/IEmployeesDTO";
-
+import { AppError } from '../../../shared/errors/AppError'
 
 @injectable()
-class EmployeesUseCase {
+class CreateEmployeesUseCase {
     
     constructor(
         @inject("EmployeesRepository")
@@ -23,15 +23,23 @@ class EmployeesUseCase {
         telefone
         }: IEmployeesDTO): Promise<void>{
 
+            const userAlreadyExists = await this.employeesRepository.findByEmail(email)
+            
+            if (userAlreadyExists){
+                throw new AppError('User already exists!')
+            }
+
+            const passwordHash = await hash(password, 8)
+
             const user = await this.employeesRepository.create({
             name,
             cpf,
             email,
-            password,
+            password: passwordHash,
             endereco,
             telefone
             })
         }
 }
 
-export { EmployeesUseCase }
+export { CreateEmployeesUseCase }
