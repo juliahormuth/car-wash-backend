@@ -34,13 +34,11 @@ class EmployeesRepository implements IEmployeesRepository{
         return employees;
     }
 
-    /*async updateEmployee(request: string, ICreate): Promise<void> {
-        const user = this.repository.update(request)
-        
-           
-        });
+    async findById(id: string): Promise<Employees>{
+        const employee = await this.repository.findOne(id)
+       
+       return employee;
     }
-    */
 }
 
 export { EmployeesRepository}

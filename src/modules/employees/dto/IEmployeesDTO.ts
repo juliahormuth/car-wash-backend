@@ -5,6 +5,7 @@ interface IEmployeesDTO {
     password: string;
     endereco: string;
     telefone: string;
+    id?: string;
   }
 
 

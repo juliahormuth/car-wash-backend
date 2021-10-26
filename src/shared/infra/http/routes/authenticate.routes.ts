@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { AuthenticateUserController } from '../../../../modules/accounts/useCases/Authentication/AuthenticateUserController';
+import { AuthenticateEmployeeController } from '../../../../modules/employees/domain/authentication.controller'
 
 const authenticateRoutes = Router();
 
-const authenticateUserController = new AuthenticateUserController()
+const authenticateEmployeeController = new AuthenticateEmployeeController()
 
-authenticateRoutes.post('/sessions', authenticateUserController.handle)
+authenticateRoutes.post('/session', authenticateEmployeeController.handle)
 
-export {authenticateRoutes};
+export {authenticateRoutes}
