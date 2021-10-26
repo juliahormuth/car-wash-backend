@@ -32,7 +32,7 @@ class EmployeesRepository implements IEmployeesRepository{
     async list(): Promise<Employees[]> {
         const employees = await this.repository.find();
         return employees;
-      }
+    }
 }
 
 export { EmployeesRepository}
