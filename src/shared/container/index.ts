@@ -4,7 +4,6 @@ import { IEmployeesRepository } from 'src/modules/employees/infra/repositories/I
 import { EmployeesRepository } from '../../modules/employees/infra/repositories/EmployeesRepository'
 
 
-// ICategoriesRepository para dentro do:
 
 
 container.registerSingleton<IEmployeesRepository>(
