@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\jvhor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+  C:\Program Files\nodejs\node.exe C:\Users\jvhor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js remove swagger-ui-express
 
 PATH: 
   C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\jvhor\AppData\Local\Microsoft\WindowsApps;;C:\Users\jvhor\.dotnet\tools;C:\Users\jvhor\AppData\Roaming\npm;E:\Visual Studio Code\Microsoft VS Code\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, copyfile 'C:\Users\jvhor\AppData\Local\Yarn\Cache\v6\npm-abab-2.0.5-c0b678fb32d60fc1219c784d6a826fe385aeb79a-integrity\node_modules\abab\CHANGELOG.md' -> 'E:\rentx\node_modules\abab\CHANGELOG.md'
+  Error: EPERM: operation not permitted, unlink 'E:\rentx\node_modules\.bin\ts-node-dev'
 
 npm manifest: 
   {
@@ -37,7 +37,6 @@ npm manifest:
       "multer": "^1.4.3",
       "pg": "^8.7.1",
       "reflect-metadata": "^0.1.13",
-      "swagger-ui-express": "^4.1.6",
       "tsyringe": "^4.6.0",
       "typeorm": "^0.2.37",
       "uuid": "^8.3.2"

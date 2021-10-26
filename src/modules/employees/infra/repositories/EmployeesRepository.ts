@@ -33,6 +33,14 @@ class EmployeesRepository implements IEmployeesRepository{
         const employees = await this.repository.find();
         return employees;
     }
+
+    /*async updateEmployee(request: string, ICreate): Promise<void> {
+        const user = this.repository.update(request)
+        
+           
+        });
+    }
+    */
 }
 
 export { EmployeesRepository}
