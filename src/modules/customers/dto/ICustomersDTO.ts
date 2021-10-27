@@ -3,6 +3,7 @@ interface ICustomersDTO {
     cpf: string;
     endereco: string;
     telefone: string;
+    id?: string;
 }
 
 export {ICustomersDTO }

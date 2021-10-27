@@ -1,4 +1,4 @@
-import { DeleteResult, getRepository, Repository } from "typeorm";
+import { DeleteResult, getRepository, Repository, UpdateResult } from "typeorm";
 import { ICustomersDTO } from "../../dto/ICustomersDTO";
 import { Customers } from "../entities/customers";
 import { ICustomersRepository } from "./ICustomersRepository";
@@ -30,6 +30,11 @@ class CustomersRepository implements ICustomersRepository{
         const employees = await this.repository.delete(cpf);
 
         return employees
+    }
+
+    async updateCustomer(id: number, iCustomersDTO: ICustomersDTO): Promise<UpdateResult> {
+        const employee =  await this.repository.update(id, iCustomersDTO) 
+        return employee
     }
 }
 export { CustomersRepository }
