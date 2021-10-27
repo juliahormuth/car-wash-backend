@@ -21,6 +21,6 @@ customersRouter.use(ensureAuthenticated)
 customersRouter.post('/', createCustomersController.handle)
 customersRouter.get('/', getCustomersController.handle)
 customersRouter.delete('/', deleteCustomersController.handle)
-customersRouter.put('/', updateCustomerController.handle)
+customersRouter.put('/:id', updateCustomerController.handle)
 
 export { customersRouter }

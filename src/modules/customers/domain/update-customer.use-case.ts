@@ -1,9 +1,6 @@
-import { injectable, inject } from "tsyringe";
-import { UpdateResult } from "typeorm";
-import { ICustomersDTO } from "../dto/ICustomersDTO";
-import { ICustomersRepository } from "../infra/repositories/ICustomersRepository";
-
-
+import { injectable, inject } from "tsyringe"
+import { ICustomersDTO } from "../dto/ICustomersDTO"
+import { ICustomersRepository } from "../infra/repositories/ICustomersRepository"
 
 @injectable()
 class UpdateCustomersUseCase {
@@ -13,10 +10,22 @@ class UpdateCustomersUseCase {
         private customersRepository: ICustomersRepository
     ) {}
 
-    async execute(id: number, iCustomersDTO: ICustomersDTO): Promise<UpdateResult>{
+    async execute( { 
+        id,
+        name, 
+        cpf,
+        endereco,
+        telefone
+        }: ICustomersDTO): Promise<void> {
+            
 
-            const employees = await this.customersRepository.updateCustomer(id, iCustomersDTO);
-            return employees;
+            const customer = await this.customersRepository.deleteCustomer({
+            id,
+            name,
+            cpf,
+            endereco,
+            telefone
+            })
         }
 }
 

@@ -32,9 +32,30 @@ class CustomersRepository implements ICustomersRepository{
         return employees
     }
 
-    async updateCustomer(id: number, iCustomersDTO: ICustomersDTO): Promise<UpdateResult> {
-        const employee =  await this.repository.update(id, iCustomersDTO) 
-        return employee
+    /*async updateCustomer(id: number): Promise<Customers> {
+      const customer = await this.repository.findOne(id)
+
+      this.repository.merge(customer)
+
+      const results = await this.repository.save(customer)
+
+      return results
+
+      
+    }*/
+
+    async updateCustomer({
+        id, 
+        name,
+        telefone,
+        endereco,
+    }: ICustomersDTO): Promise<Customers> {
+        
+        const customer = await this.repository.findOne(id);
+
+        await this.repository.update(id, {name, telefone, endereco})
+
+        return customer
     }
 }
 export { CustomersRepository }
