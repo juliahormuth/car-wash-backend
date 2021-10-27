@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
-import { EmployeesRepository } from 'src/modules/employees/infra/repositories/EmployeesRepository';
+import { EmployeesRepository} from '../../../../modules/employees/infra/repositories/EmployeesRepository';
 import { AppError } from '../../../errors/AppError';
 
 interface IPayload {

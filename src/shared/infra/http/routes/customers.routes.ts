@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { CreateCustomersController } from "src/modules/customers/domain/create-customer.controller";
+import { CreateCustomersController } from '../../../../modules/customers/domain/create-customer.controller'
+import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 
 
@@ -10,5 +11,8 @@ const createCustomersController = new CreateCustomersController ();
 
 
 
-
+customersRouter.use(ensureAuthenticated)
 customersRouter.post('/', createCustomersController.handle)
+
+
+export { customersRouter }
