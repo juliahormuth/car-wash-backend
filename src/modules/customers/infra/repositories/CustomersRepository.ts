@@ -1,4 +1,4 @@
-import { getRepository, Repository } from "typeorm";
+import { DeleteResult, getRepository, Repository } from "typeorm";
 import { ICustomersDTO } from "../../dto/ICustomersDTO";
 import { Customers } from "../entities/customers";
 import { ICustomersRepository } from "./ICustomersRepository";
@@ -20,6 +20,16 @@ class CustomersRepository implements ICustomersRepository{
 
         await this.repository.save(user)
     }
-       
+    
+    async list(): Promise<Customers[]> {
+        const employees = await this.repository.find();
+        return employees;
+    }
+
+    async deleteCustomer(cpf: ICustomersDTO): Promise<DeleteResult> {
+        const employees = await this.repository.delete(cpf);
+
+        return employees
+    }
 }
 export { CustomersRepository }
