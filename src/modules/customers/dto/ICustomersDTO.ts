@@ -1,6 +1,6 @@
 interface ICustomersDTO {
     name: string;
-    cpf: string;
+    cpf?: string;
     endereco: string;
     telefone: string;
     id?: string;

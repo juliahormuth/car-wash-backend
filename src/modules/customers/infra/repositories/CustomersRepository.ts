@@ -1,4 +1,5 @@
-import { DeleteResult, getRepository, Repository, UpdateResult } from "typeorm";
+import { CsvError } from "csv-parse";
+import { CustomRepositoryNotFoundError, DeleteResult, getRepository, Repository, UpdateResult } from "typeorm";
 import { ICustomersDTO } from "../../dto/ICustomersDTO";
 import { Customers } from "../entities/customers";
 import { ICustomersRepository } from "./ICustomersRepository";
@@ -32,30 +33,28 @@ class CustomersRepository implements ICustomersRepository{
         return employees
     }
 
-    /*async updateCustomer(id: number): Promise<Customers> {
-      const customer = await this.repository.findOne(id)
-
-      this.repository.merge(customer)
-
-      const results = await this.repository.save(customer)
-
-      return results
-
-      
-    }*/
-
-    async updateCustomer({
-        id, 
-        name,
-        telefone,
-        endereco,
-    }: ICustomersDTO): Promise<Customers> {
-        
-        const customer = await this.repository.findOne(id);
-
-        await this.repository.update(id, {name, telefone, endereco})
-
-        return customer
+    async deleteById(id: string): Promise<void> {
+        const employees = await this.repository.delete(id);
     }
+
+
+    async findById(id:string): Promise<Customers> {
+        const customer = await this.repository.findOne(id)
+        
+        return customer;
+   }
+
+    async updateById(id: string, request: ICustomersDTO): Promise<Customers>{
+
+        const customer = await this.repository.findOne(id)
+
+        this.repository.merge(customer, request)
+
+        const result = await this.repository.save(customer)
+
+        return result
+    }
+
 }
 export { CustomersRepository }
+

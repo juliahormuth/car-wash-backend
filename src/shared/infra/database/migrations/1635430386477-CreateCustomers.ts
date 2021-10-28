@@ -1,6 +1,6 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateCustomers1635284048876 implements MigrationInterface {
+export class CreateCustomers1635430386477 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
@@ -10,6 +10,7 @@ export class CreateCustomers1635284048876 implements MigrationInterface {
                     { 
                         name: "id",
                         type: "uuid",
+                        isPrimary: true,
                     },
                     {
                         name: "name",
@@ -19,7 +20,6 @@ export class CreateCustomers1635284048876 implements MigrationInterface {
                         name: "cpf",
                         type: "varchar",
                         isUnique: true,
-                        isPrimary: true
                     },
                     {
                         name: "endereco",

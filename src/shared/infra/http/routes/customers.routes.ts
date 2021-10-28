@@ -12,15 +12,19 @@ const customersRouter = Router();
 
 const createCustomersController = new CreateCustomersController()
 const getCustomersController = new GetCustomersController()
-const deleteCustomersController = new DeleteCustomerController
-const updateCustomerController = new UpdateCustomersController
+const deleteCustomersController = new DeleteCustomerController()
+const updateCustomerController = new UpdateCustomersController()
+const getByIdCustomerController = new GetCustomersController()
+const deleteByIdCustomerController = new DeleteCustomerController()
 
 
 
 customersRouter.use(ensureAuthenticated)
 customersRouter.post('/', createCustomersController.handle)
 customersRouter.get('/', getCustomersController.handle)
+customersRouter.get('/:id', getByIdCustomerController.handle)
 customersRouter.delete('/', deleteCustomersController.handle)
 customersRouter.put('/:id', updateCustomerController.handle)
+customersRouter.delete('/:id', deleteByIdCustomerController.handle)
 
 export { customersRouter }

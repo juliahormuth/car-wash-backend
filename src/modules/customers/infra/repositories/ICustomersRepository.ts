@@ -7,7 +7,8 @@ interface ICustomersRepository {
 create(request: ICustomersDTO): Promise<void>
 list(): Promise<Customers[]>
 deleteCustomer(cpf: ICustomersDTO): Promise<DeleteResult>
-updateCustomer({id, name, cpf, endereco, telefone}: ICustomersDTO): Promise<Customers>
-
+findById(id: string): Promise<Customers>
+updateById(id: string, request: ICustomersDTO): Promise<Customers>
+deleteById(id: string): Promise<void>
 }
  export { ICustomersRepository }

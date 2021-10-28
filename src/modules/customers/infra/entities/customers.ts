@@ -4,13 +4,13 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
 @Entity("customers")
 class Customers {
 
-@Column()
+@PrimaryColumn()
 id: string;
 
 @Column()
 name: string;
 
-@PrimaryColumn()
+@Column()
 cpf: string;
 
 @Column()
