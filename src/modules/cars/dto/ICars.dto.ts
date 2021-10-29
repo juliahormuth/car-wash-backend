@@ -7,5 +7,4 @@ interface ICarsDTO {
     color: string;
   }
 
-
 export {ICarsDTO}

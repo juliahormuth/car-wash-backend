@@ -1,5 +1,5 @@
 import { injectable , inject} from "tsyringe";
-import { Customers } from "../infra/entities/customers";
+import { Customers } from '../infra/entities/customers'
 import { ICustomersRepository } from "../infra/repositories/ICustomersRepository";
 
 

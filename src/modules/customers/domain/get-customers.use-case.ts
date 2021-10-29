@@ -1,5 +1,5 @@
 import { injectable, inject } from "tsyringe";
-import { Customers } from "../infra/entities/customers";
+import { Customers } from '../infra/entities/customers'
 import { ICustomersRepository } from "../infra/repositories/ICustomersRepository";
 
 @injectable()
@@ -12,7 +12,7 @@ class GetCustomersUseCase {
 
     async execute(): Promise<Customers[]>{
 
-            const employees = await this.customersRepository.list();
+            const employees = await this.customersRepository.getAll();
             return employees;
         }
 }

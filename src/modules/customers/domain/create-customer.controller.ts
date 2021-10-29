@@ -5,12 +5,12 @@ import { CreateCustomersUseCase } from "./create-customer.use-case";
 class CreateCustomersController {
 
     async handle(request: Request, response: Response): Promise<Response> {
-        const {name, cpf, endereco, telefone } =  request.body;
+        const {name, document, address, phoneNumber } =  request.body;
 
         const curstomersUseCase = container.resolve(CreateCustomersUseCase);
 
         await curstomersUseCase.execute({
-            name, cpf, endereco, telefone
+            name, document: document, address: address, phoneNumber: phoneNumber
         });
 
         return response.status(201).send();

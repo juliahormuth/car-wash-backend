@@ -1,9 +1,9 @@
 interface ICustomersDTO {
-    name: string;
-    cpf?: string;
-    endereco: string;
-    telefone: string;
     id?: string;
+    name: string;
+    document: string;
+    address: string;
+    phoneNumber: string;
 }
 
-export {ICustomersDTO }
+export { ICustomersDTO }

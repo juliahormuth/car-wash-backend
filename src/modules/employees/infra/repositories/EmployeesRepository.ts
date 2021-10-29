@@ -29,7 +29,7 @@ class EmployeesRepository implements IEmployeesRepository{
 
         return user
     }
-    async list(): Promise<Employees[]> {
+    async getAll(): Promise<Employees[]> {
         const employees = await this.repository.find();
         return employees;
     }

@@ -1,6 +1,6 @@
 import { getRepository, Repository} from "typeorm";
 import { ICustomersDTO } from "../../dto/ICustomersDTO";
-import { Customers } from "../entities/customers";
+import { Customers } from '../entities/customers';
 import { ICustomersRepository } from "./ICustomersRepository";
 
 
@@ -13,15 +13,15 @@ class CustomersRepository implements ICustomersRepository{
     async create(request: ICustomersDTO): Promise<void> {
         const user = this.repository.create({
             name: request.name,
-            cpf: request.cpf,
-            endereco: request.endereco,
-            telefone: request.telefone
+            document: request.document,
+            address: request.address,
+            phoneNumber: request.phoneNumber
         });
 
         await this.repository.save(user)
     }
     
-    async list(): Promise<Customers[]> {
+    async getAll(): Promise<Customers[]> {
         const employees = await this.repository.find();
         return employees;
     }
