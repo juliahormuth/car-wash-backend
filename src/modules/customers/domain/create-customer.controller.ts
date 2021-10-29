@@ -10,7 +10,7 @@ class CreateCustomersController {
         const curstomersUseCase = container.resolve(CreateCustomersUseCase);
 
         await curstomersUseCase.execute({
-            name, document: document, address: address, phoneNumber: phoneNumber
+            name, document, address, phoneNumber
         });
 
         return response.status(201).send();
