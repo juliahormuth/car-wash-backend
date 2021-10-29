@@ -1,5 +1,4 @@
-import { CsvError } from "csv-parse";
-import { CustomRepositoryNotFoundError, DeleteResult, getRepository, Repository, UpdateResult } from "typeorm";
+import { getRepository, Repository} from "typeorm";
 import { ICustomersDTO } from "../../dto/ICustomersDTO";
 import { Customers } from "../entities/customers";
 import { ICustomersRepository } from "./ICustomersRepository";
@@ -26,7 +25,7 @@ class CustomersRepository implements ICustomersRepository{
         const employees = await this.repository.find();
         return employees;
     }
-    
+
     async findById(id:string): Promise<Customers> {
         const customer = await this.repository.findOne(id)
         
