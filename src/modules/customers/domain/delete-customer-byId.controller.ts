@@ -13,7 +13,6 @@ class DeleteByIdCustomerController {
 
         await curstomersUseCase.execute(id)
 
-        console.log(id)
 
         return response.status(201).json("Usuário deletado com sucesso!")
     }
