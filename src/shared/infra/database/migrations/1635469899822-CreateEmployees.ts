@@ -1,36 +1,40 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateCars1635283618759 implements MigrationInterface {
+export class CreateEmployees1635469899822 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "cars",
+                name: "employees",
                 columns: [
                     { 
                         name: "id",
                         type: "uuid",
-                    },
-                    {
-                        name: "placa",
-                        type: "varchar",
-                        isUnique: true,
                         isPrimary: true
                     },
                     {
-                        name: "modelo",
+                        name: "name",
                         type: "varchar",
                     },
                     {
-                        name: "marca",
+                        name: "cpf",
+                        type: "varchar",
+                        isUnique: true
+                    },
+                    {
+                        name: "email",
                         type: "varchar",
                     },
                     {
-                        name: "tamanho",
+                        name: "password",
                         type: "varchar",
                     },
                     {
-                        name: "cor",
+                        name: "endereco",
+                        type: "varchar",
+                    },
+                    {
+                        name: "telefone",
                         type: "varchar",
                     },
                     {
@@ -45,7 +49,7 @@ export class CreateCars1635283618759 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("cars")
+        await queryRunner.dropTable("employees")
     }
 
 }

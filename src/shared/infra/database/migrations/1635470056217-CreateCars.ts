@@ -1,39 +1,36 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateUsers1635203287550 implements MigrationInterface {
+export class CreateCars1635470056217 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "employees",
+                name: "cars",
                 columns: [
                     { 
                         name: "id",
                         type: "uuid",
+                        isPrimary: true,
                     },
                     {
-                        name: "name",
+                        name: "placa",
+                        type: "varchar",
+                        isUnique: true,
+                    },
+                    {
+                        name: "modelo",
                         type: "varchar",
                     },
                     {
-                        name: "cpf",
-                        type: "varchar",
-                        isUnique: true
-                    },
-                    {
-                        name: "email",
+                        name: "marca",
                         type: "varchar",
                     },
                     {
-                        name: "password",
+                        name: "tamanho",
                         type: "varchar",
                     },
                     {
-                        name: "endereco",
-                        type: "varchar",
-                    },
-                    {
-                        name: "telefone",
+                        name: "cor",
                         type: "varchar",
                     },
                     {
@@ -47,8 +44,9 @@ export class CreateUsers1635203287550 implements MigrationInterface {
         );
     }
 
+
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("users")
+        await queryRunner.dropTable("cars")
     }
 
 }

@@ -26,18 +26,7 @@ class CustomersRepository implements ICustomersRepository{
         const employees = await this.repository.find();
         return employees;
     }
-
-    async deleteCustomer(cpf: ICustomersDTO): Promise<DeleteResult> {
-        const employees = await this.repository.delete(cpf);
-
-        return employees
-    }
-
-    async deleteById(id: string): Promise<void> {
-        const employees = await this.repository.delete(id);
-    }
-
-
+    
     async findById(id:string): Promise<Customers> {
         const customer = await this.repository.findOne(id)
         
@@ -54,6 +43,13 @@ class CustomersRepository implements ICustomersRepository{
 
         return result
     }
+
+    async deleteById(id: string): Promise<void> {
+        const employees = await this.repository.findOne(id)
+
+         await this.repository.remove(employees)
+    }
+
 
 }
 export { CustomersRepository }

@@ -1,6 +1,6 @@
 import {Request, Response } from 'express';
 import { container } from 'tsyringe';
-import { DeleteCustomersByIdUseCase } from './delete-customer-ById.use-case';
+import { DeleteCustomersByIdUseCase } from './delete-customer-byId.use-case'
 
 
 
@@ -12,6 +12,8 @@ class DeleteByIdCustomerController {
         const curstomersUseCase = container.resolve(DeleteCustomersByIdUseCase);
 
         await curstomersUseCase.execute(id)
+
+        console.log(id)
 
         return response.status(201).json("Usuário deletado com sucesso!")
     }
