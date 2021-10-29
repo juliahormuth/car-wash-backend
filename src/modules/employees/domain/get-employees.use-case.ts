@@ -1,10 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
-import { hash } from "bcryptjs";
 
 import { IEmployeesRepository } from "../infra/repositories/IEmployeesRepository";
-import { IEmployeesDTO } from "../dto/IEmployees.dto";
-import { AppError } from '../../../shared/errors/AppError'
 import { Employees } from "../infra/entities/employees";
 
 @injectable()
