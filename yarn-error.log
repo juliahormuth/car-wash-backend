@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\jvhor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js remove swagger-ui-express
+  C:\Program Files\nodejs\node.exe C:\Users\jvhor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add dayjs
 
 PATH: 
   C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\jvhor\AppData\Local\Microsoft\WindowsApps;;C:\Users\jvhor\.dotnet\tools;C:\Users\jvhor\AppData\Roaming\npm;E:\Visual Studio Code\Microsoft VS Code\bin
@@ -47,7 +47,6 @@ npm manifest:
       "@types/jest": "^27.0.2",
       "@types/jsonwebtoken": "^8.5.5",
       "@types/multer": "^1.4.7",
-      "@types/swagger-ui-express": "^4.1.3",
       "@typescript-eslint/eslint-plugin": "^4.29.2",
       "@typescript-eslint/parser": "^4.29.2",
       "eslint": "^7.32.0",
@@ -813,14 +812,6 @@ Lockfile:
     version "0.0.30"
     resolved "https://registry.npmjs.org/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz"
     integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
-  
-  "@types/swagger-ui-express@^4.1.3":
-    version "4.1.3"
-    resolved "https://registry.npmjs.org/@types/swagger-ui-express/-/swagger-ui-express-4.1.3.tgz"
-    integrity sha512-jqCjGU/tGEaqIplPy3WyQg+Nrp6y80DCFnDEAvVKWkJyv0VivSSDCChkppHRHAablvInZe6pijDFMnavtN0vqA==
-    dependencies:
-      "@types/express" "*"
-      "@types/serve-static" "*"
   
   "@types/uuid@^8.3.1":
     version "8.3.1"
@@ -4401,18 +4392,6 @@ Lockfile:
     dependencies:
       has-flag "^4.0.0"
       supports-color "^7.0.0"
-  
-  swagger-ui-dist@^3.18.1:
-    version "3.52.2"
-    resolved "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-3.52.2.tgz"
-    integrity sha512-k6QsJqDxfkMlelFUobIKRggR9y5BPvhr/ok9IUPlpnAQsytCx8SSKtNOFkf+W5yZi1Zh6X8GAz2picmmvZBSIw==
-  
-  swagger-ui-express@^4.1.6:
-    version "4.1.6"
-    resolved "https://registry.npmjs.org/swagger-ui-express/-/swagger-ui-express-4.1.6.tgz"
-    integrity sha512-Xs2BGGudvDBtL7RXcYtNvHsFtP1DBFPMJFRxHe5ez/VG/rzVOEjazJOOSc/kSCyxreCTKfJrII6MJlL9a6t8vw==
-    dependencies:
-      swagger-ui-dist "^3.18.1"
   
   symbol-tree@^3.2.4:
     version "3.2.4"
