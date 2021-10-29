@@ -14,18 +14,18 @@ class CreateCustomersUseCase {
     ) {}
 
     async execute( { 
-        name, 
-        document: document,
-        address: address,
-        phoneNumber: phoneNumber
+       name, 
+       document,
+       address,
+       phoneNumber
         }: ICustomersDTO): Promise<void> {
             
 
             const customer = await this.customersRepository.create({
             name,
-            document: document,
-            address: address,
-            phoneNumber: phoneNumber
+            document,
+            address,
+            phoneNumber
             })
         }
 }
