@@ -1,6 +1,6 @@
 import { injectable, inject } from "tsyringe"
 import { ICustomersDTO } from "../dto/ICustomersDTO"
-import { Customers } from '../infra/entities/customers'
+import { Customers } from '../infra/entities/Customers'
 import { ICustomersRepository } from "../infra/repositories/ICustomersRepository"
 
 

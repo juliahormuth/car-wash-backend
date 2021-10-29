@@ -1,5 +1,5 @@
 import { ICustomersDTO } from "../../dto/ICustomersDTO";
-import { Customers } from '../entities/customers';
+import { Customers } from '../entities/Customers'
 
 
 interface ICustomersRepository {
