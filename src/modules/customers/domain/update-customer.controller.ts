@@ -9,9 +9,9 @@ class UpdateCustomersController {
         const { id } = request.params
         const { name, document, phoneNumber, address } =  request.body;
     
-        const curstomersUseCase = container.resolve(UpdateCustomersUseCase);
+        const customersUseCase = container.resolve(UpdateCustomersUseCase);
 
-       const result = await curstomersUseCase.execute(id, {name, document, phoneNumber, address})
+       const result = await customersUseCase.execute(id, {name, document, phoneNumber, address})
 
         return response.status(200).json(result)
     }
