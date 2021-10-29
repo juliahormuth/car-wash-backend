@@ -1,4 +1,4 @@
-import { IEmployeesDTO } from '../../dto/IEmployeesDTO';
+import { IEmployeesDTO } from '../../dto/IEmployees.dto';
 import { Employees } from '../entities/employees';
 
 

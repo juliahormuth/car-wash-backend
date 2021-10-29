@@ -1,7 +1,4 @@
-import { getRepository, Repository } from "typeorm";
-import { IEmployeesDTO } from "../../dto/IEmployees.dto";
-import { Employees } from "../entities/employees";
-import { IEmployeesRepository } from "./IEmployeesRepository";
+
 
 class EmployeesRepository implements IEmployeesRepository{
     private repository: Repository<Employees>
