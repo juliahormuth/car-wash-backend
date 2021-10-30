@@ -11,7 +11,7 @@ id: string;
 name: string;
 
 @Column()
-cpf: string;
+document: string;
 
 @Column()
 email: string;
@@ -20,10 +20,10 @@ email: string;
 password: string;
 
 @Column()
-endereco: string;
+address: string;
 
 @Column()
-telefone: string;
+phoneNumber: string;
 
 @CreateDateColumn()
 created_at: Date;

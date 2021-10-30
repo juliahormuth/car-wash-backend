@@ -12,11 +12,11 @@ class EmployeesRepository implements IEmployeesRepository{
     async create(request: IEmployeesDTO): Promise<void> {
         const user = this.repository.create({
             name: request.name,
-            cpf: request.cpf,
+            document: request.document,
             email: request.email,
             password: request.password,
-            endereco: request.endereco,
-            telefone: request.telefone
+            address: request.address,
+            phoneNumber: request.phoneNumber
            
         });
 

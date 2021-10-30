@@ -8,8 +8,8 @@ const employeesRouter = Router();
 
 
 
-const createEmployeesController = new CreateEmployeesController ();
-const getEmployeesController = new GetEmployeesController();
+const createEmployeesController = new CreateEmployeesController()
+const getEmployeesController = new GetEmployeesController()
 
 employeesRouter.post('/', createEmployeesController.handle)
 employeesRouter.get('/', getEmployeesController.handle)

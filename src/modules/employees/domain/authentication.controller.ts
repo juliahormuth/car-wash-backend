@@ -3,7 +3,6 @@ import { container } from "tsyringe"
 import { AuthenticateEmployeeUseCase } from "./authentication.use-case"
 
 
-
 class AuthenticateEmployeeController {
     async handle(request: Request, response: Response): Promise<Response>{
 

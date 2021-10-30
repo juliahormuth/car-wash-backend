@@ -1,5 +1,6 @@
 import { container } from 'tsyringe';
 
+import './providers/index'
 import { IEmployeesRepository } from 'src/modules/employees/infra/repositories/IEmployeesRepository';
 import { EmployeesRepository } from '../../modules/employees/infra/repositories/EmployeesRepository'
 import { ICustomersRepository } from 'src/modules/customers/infra/repositories/ICustomersRepository';

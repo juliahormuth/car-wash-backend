@@ -16,11 +16,11 @@ class CreateEmployeesUseCase {
 
     async execute( { 
         name, 
-        cpf,
+        document,
         email,
         password, 
-        endereco,
-        telefone
+        address,
+        phoneNumber
         }: IEmployeesDTO): Promise<void>{
 
             const userAlreadyExists = await this.employeesRepository.findByEmail(email)
@@ -33,11 +33,11 @@ class CreateEmployeesUseCase {
 
             const user = await this.employeesRepository.create({
             name,
-            cpf,
+            document,
             email,
             password: passwordHash,
-            endereco,
-            telefone
+            address,
+            phoneNumber
             })
         }
 }

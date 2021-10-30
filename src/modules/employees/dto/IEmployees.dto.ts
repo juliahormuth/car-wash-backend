@@ -1,12 +1,11 @@
 interface IEmployeesDTO {
+    id?: string;
     name: string;
-    cpf: string;
+    document: string;
     email: string;
     password: string;
-    endereco: string;
-    telefone: string;
-    id?: string;
+    address: string;
+    phoneNumber: string;
   }
-
 
 export {IEmployeesDTO}

@@ -1,36 +1,40 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateCars1635470056217 implements MigrationInterface {
+export class CreateEmployees1635556614750 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "cars",
+                name: "employees",
                 columns: [
                     { 
                         name: "id",
                         type: "uuid",
-                        isPrimary: true,
+                        isPrimary: true
                     },
                     {
-                        name: "placa",
-                        type: "varchar",
-                        isUnique: true,
-                    },
-                    {
-                        name: "modelo",
+                        name: "name",
                         type: "varchar",
                     },
                     {
-                        name: "marca",
+                        name: "document",
+                        type: "varchar",
+                        isUnique: true
+                    },
+                    {
+                        name: "email",
                         type: "varchar",
                     },
                     {
-                        name: "tamanho",
+                        name: "password",
                         type: "varchar",
                     },
                     {
-                        name: "cor",
+                        name: "address",
+                        type: "varchar",
+                    },
+                    {
+                        name: "phoneNumber",
                         type: "varchar",
                     },
                     {
@@ -43,10 +47,10 @@ export class CreateCars1635470056217 implements MigrationInterface {
             })
         );
     }
-
+    
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("cars")
+        await queryRunner.dropTable("employees")
     }
 
 }
