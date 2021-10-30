@@ -8,19 +8,19 @@ class Cars {
 id: string;
 
 @Column()
-placa: string;
+board: string;
 
 @Column()
-modelo: string;
+model: string;
 
 @Column()
-marca: string;
+brand: string;
 
 @Column()
-tamanho: string;
+size: string;
 
 @Column()
-cor: string;
+color: string;
 
 @CreateDateColumn()
 created_at: Date;

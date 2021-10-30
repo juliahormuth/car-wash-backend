@@ -1,41 +1,50 @@
+import { getRepository, Repository } from "typeorm";
+import { ICarsRepository } from "./ICarsRepository";
+import { ICarsDTO } from "../../dto/ICars.dto";
+import { Cars } from "../entities/Cars";
 
 
-class EmployeesRepository implements IEmployeesRepository{
-    private repository: Repository<Employees>
+class CarsRepository implements ICarsRepository{
+    private repository: Repository<Cars>
 
     constructor(){
-        this.repository = getRepository(Employees);
+        this.repository = getRepository(Cars);
     }
-    async create(request: IEmployeesDTO): Promise<void> {
-        const user = this.repository.create({
-            name: request.name,
-            cpf: request.cpf,
-            email: request.email,
-            password: request.password,
-            endereco: request.endereco,
-            telefone: request.telefone
-           
+    
+    async create(request: ICarsDTO): Promise<void> {
+        const car = this.repository.create({
+            board: request.board,
+            model: request.model,
+            brand: request.brand,
+            size: request.size,
+            color: request.color,
         });
 
-        await this.repository.save(user)
+        await this.repository.save(car)
     }
        
-    async findByEmail(email: string): Promise<Employees>{
-
-        const user = await this.repository.findOne({email})
-
-        return user
-    }
-    async list(): Promise<Employees[]> {
-        const employees = await this.repository.find();
-        return employees;
-    }
-
-    async findById(id: string): Promise<Employees>{
-        const employee = await this.repository.findOne(id)
+    async findById(id: string): Promise<Cars>{
+        const car = await this.repository.findOne(id)
        
-       return employee;
+       return car;
+    }
+
+    async findByBoard(board: string): Promise<Cars>{
+
+        const car = await this.repository.findOne({board})
+
+        return car
+    }
+    
+    async getAll(): Promise<Cars[]> {
+        const cars = await this.repository.find();
+        return cars;
+    }
+
+    async deleteById(id: string): Promise<void> {
+        const car = await this.repository.findOne(id)
+        await this.repository.remove(car)
     }
 }
 
-export { EmployeesRepository}
+export { CarsRepository }
