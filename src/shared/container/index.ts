@@ -5,7 +5,8 @@ import { IEmployeesRepository } from 'src/modules/employees/infra/repositories/I
 import { EmployeesRepository } from '../../modules/employees/infra/repositories/EmployeesRepository'
 import { ICustomersRepository } from 'src/modules/customers/infra/repositories/ICustomersRepository';
 import { CustomersRepository } from '../../modules/customers/infra/repositories/CustomersRepository'
-
+import { ICarsRepository } from '../../modules/cars/infra/repositories/ICarsRepository'
+import { CarsRepository } from '../../modules/cars/infra/repositories/CarsRepository'
 
 
 
@@ -17,4 +18,9 @@ container.registerSingleton<IEmployeesRepository>(
 container.registerSingleton<ICustomersRepository>(
     "CustomersRepository", 
     CustomersRepository
+);
+
+container.registerSingleton<ICarsRepository>(
+    "CarsRepository", 
+    CarsRepository
 );
