@@ -22,7 +22,7 @@ size: string;
 @Column()
 color: string;
 
-@CreateDateColumn()
+@CreateDateColumn({nullable: true})
 created_at: Date;
 
 constructor() {

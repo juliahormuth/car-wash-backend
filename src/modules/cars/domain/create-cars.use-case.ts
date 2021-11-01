@@ -3,7 +3,6 @@ import { ICarsDTO } from "../dto/ICars.dto"
 import { ICarsRepository } from "../infra/repositories/ICarsRepository"
 
 
-
 @injectable()
 class CreateCarsUseCase {
     
@@ -31,4 +30,4 @@ class CreateCarsUseCase {
         }
 }
 
-export { CreateCarsUseCase  }
+export { CreateCarsUseCase }

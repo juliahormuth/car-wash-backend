@@ -21,30 +21,36 @@ class CarsRepository implements ICarsRepository{
         });
 
         await this.repository.save(car)
+
     }
-       
+
     async findById(id: string): Promise<Cars>{
         const car = await this.repository.findOne(id)
        
        return car;
     }
 
-    async findByBoard(board: string): Promise<Cars>{
-
-        const car = await this.repository.findOne({board})
-
-        return car
-    }
-    
     async getAll(): Promise<Cars[]> {
         const cars = await this.repository.find();
         return cars;
     }
+    
+    async updateById(id: string, request: ICarsDTO): Promise<Cars>{
 
+        const car = await this.repository.findOne(id)
+
+        this.repository.merge(car, request)
+
+        const result = await this.repository.save(car)
+
+        return result
+    }
+       
     async deleteById(id: string): Promise<void> {
         const car = await this.repository.findOne(id)
         await this.repository.remove(car)
     }
+
 }
 
 export { CarsRepository }
