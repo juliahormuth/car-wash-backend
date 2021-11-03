@@ -11,3 +11,7 @@ const createWashController = new CreateWashController()
 
 washRouter.use(ensureAuthenticated)
 washRouter.post('/', createWashController.handle)
+
+
+
+export { washRouter }
