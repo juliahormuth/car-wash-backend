@@ -30,6 +30,12 @@ class CarsRepository implements ICarsRepository{
        return car;
     }
 
+    async findByBoard(board: string): Promise<Cars>{
+        const car = await this.repository.findOne({board})
+       
+       return car;
+    }
+
     async getAll(): Promise<Cars[]> {
         const cars = await this.repository.find();
         return cars;

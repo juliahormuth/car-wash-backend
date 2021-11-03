@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\jvhor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add dayjs
+  C:\Program Files\nodejs\node.exe C:\Users\jvhor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/cors
 
 PATH: 
   C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\jvhor\AppData\Local\Microsoft\WindowsApps;;C:\Users\jvhor\.dotnet\tools;C:\Users\jvhor\AppData\Roaming\npm;E:\Visual Studio Code\Microsoft VS Code\bin
@@ -30,7 +30,9 @@ npm manifest:
     "dependencies": {
       "@types/uuid": "^8.3.1",
       "bcryptjs": "^2.4.3",
+      "cors": "^2.8.5",
       "csv-parse": "^4.16.3",
+      "dayjs": "^1.10.7",
       "express": "^4.17.1",
       "express-async-errors": "^3.1.1",
       "jsonwebtoken": "^8.5.1",
@@ -1483,6 +1485,14 @@ Lockfile:
     resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz"
     integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
   
+  cors@^2.8.5:
+    version "2.8.5"
+    resolved "https://registry.yarnpkg.com/cors/-/cors-2.8.5.tgz#eac11da51592dd86b9f06f6e7ac293b3df875d29"
+    integrity sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==
+    dependencies:
+      object-assign "^4"
+      vary "^1"
+  
   create-require@^1.1.0:
     version "1.1.1"
     resolved "https://registry.npmjs.org/create-require/-/create-require-1.1.1.tgz"
@@ -1527,6 +1537,11 @@ Lockfile:
       abab "^2.0.3"
       whatwg-mimetype "^2.3.0"
       whatwg-url "^8.0.0"
+  
+  dayjs@^1.10.7:
+    version "1.10.7"
+    resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
+    integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
   
   debug@2.6.9, debug@^2.6.9:
     version "2.6.9"
@@ -3495,7 +3510,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.0.tgz#204879a9e3d068ff2a55139c2c772780681a38b7"
     integrity sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ==
   
-  object-assign@^4.0.1, object-assign@^4.1.1:
+  object-assign@^4, object-assign@^4.0.1, object-assign@^4.1.1:
     version "4.1.1"
     resolved "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
     integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
@@ -4720,7 +4735,7 @@ Lockfile:
       spdx-correct "^3.0.0"
       spdx-expression-parse "^3.0.0"
   
-  vary@~1.1.2:
+  vary@^1, vary@~1.1.2:
     version "1.1.2"
     resolved "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
     integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=

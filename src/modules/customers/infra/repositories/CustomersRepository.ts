@@ -32,6 +32,13 @@ class CustomersRepository implements ICustomersRepository{
         return customer;
    }
 
+   async findByDocument(document:string): Promise<Customers> {
+    const customer = await this.repository.findOne({document})
+
+    return customer;
+}
+
+
     async updateById(id: string, request: ICustomersDTO): Promise<Customers>{
 
         const customer = await this.repository.findOne(id)

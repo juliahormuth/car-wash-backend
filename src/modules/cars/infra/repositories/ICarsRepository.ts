@@ -4,6 +4,7 @@ import { Cars } from '../entities/Cars'
 interface ICarsRepository {
     create(request: ICarsDTO): Promise<void>
     findById(id: string): Promise<Cars>
+    findByBoard(board: string): Promise<Cars>
     getAll(): Promise<Cars[]>
     updateById(id: string, request: ICarsDTO): Promise<Cars>
     deleteById(id: string): Promise<void>

@@ -1,6 +1,7 @@
 import { injectable, inject } from "tsyringe"
 import { ICustomersDTO } from "../dto/ICustomersDTO"
 import { ICustomersRepository } from "../infra/repositories/ICustomersRepository"
+import { AppError } from '../../../shared/errors/AppError'
 
 
 
@@ -19,9 +20,14 @@ class CreateCustomersUseCase {
        address,
        phoneNumber
         }: ICustomersDTO): Promise<void> {
-            
 
-            const customer = await this.customersRepository.create({
+         const customerAlreadyExists = await this.customersRepository.findByDocument(document)
+
+         if(customerAlreadyExists){
+          throw new AppError('Customer already exists!')
+         }
+
+          await this.customersRepository.create({
             name,
             document,
             address,

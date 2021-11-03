@@ -19,7 +19,7 @@ interface IResponse {
 }
 
 @injectable()
-class AuthenticateEmployeeUseCase {
+class AuthenticateEmployeeUseCase { 
 
     constructor(
         @inject("EmployeesRepository")

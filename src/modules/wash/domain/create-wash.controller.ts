@@ -1,16 +1,23 @@
+import { Request, Response } from 'express'
+import { CreateWashUseCase } from '../domain/create-wash.use-case';
+import { container } from 'tsyringe';
+
 
 
 class CreateWashController {
-    async handle(request: Request, response: Response): Promise<Response>{
-        const {expect_return_date , car_id} = request.body;
-        
-        const createWashUseCase = container.resolve(CreateWashUseCse)
 
-       const wash =  await createWashUseCase.execute({
-            car_id;
-            expect_return_date
-        })
+    async handle(request: Request, response: Response): Promise<Response> {
+        const {washType, value } =  request.body;
 
-        return response.status(201).json(wash)
+        const createWashUseCase = container.resolve(CreateWashUseCase);
+
+        await createWashUseCase.execute({
+            washType, value
+        });
+
+        return response.status(201).send();
     }
+
 }
+
+export { CreateWashController };

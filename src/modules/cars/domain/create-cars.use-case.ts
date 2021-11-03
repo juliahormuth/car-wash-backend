@@ -1,7 +1,7 @@
 import { injectable, inject } from "tsyringe"
 import { ICarsDTO } from "../dto/ICars.dto"
 import { ICarsRepository } from "../infra/repositories/ICarsRepository"
-
+import { AppError } from '../../../shared/errors/AppError'
 
 @injectable()
 class CreateCarsUseCase {
@@ -18,9 +18,14 @@ class CreateCarsUseCase {
        size,
        color
         }: ICarsDTO): Promise<void> {
-            
 
-            const cars = await this.carsRepository.create({
+            const carAlreadyExists = await this.carsRepository.findByBoard(board)
+
+            if(carAlreadyExists) {
+                throw new AppError('Board already exists!')
+            }
+            
+          await this.carsRepository.create({
             board,
             model,
             brand,

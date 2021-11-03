@@ -6,6 +6,7 @@ interface ICustomersRepository {
 create(request: ICustomersDTO): Promise<void>
 getAll(): Promise<Customers[]>
 findById(id: string): Promise<Customers>
+findByDocument(document: string): Promise<Customers>
 updateById(id: string, request: ICustomersDTO): Promise<Customers>
 deleteById(id: string): Promise<void>
 }
