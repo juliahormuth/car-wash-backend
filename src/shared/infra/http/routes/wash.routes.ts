@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { CreateWashController } from "src/modules/wash/domain/create-wash.controller";
+import { CreateWashController} from '../../../../modules/wash/domain/create-wash.controller'
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 const washRouter = Router();

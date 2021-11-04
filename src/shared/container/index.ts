@@ -7,8 +7,8 @@ import { ICustomersRepository } from 'src/modules/customers/infra/repositories/I
 import { CustomersRepository } from '../../modules/customers/infra/repositories/CustomersRepository'
 import { ICarsRepository } from '../../modules/cars/infra/repositories/ICarsRepository'
 import { CarsRepository } from '../../modules/cars/infra/repositories/CarsRepository'
-import { IWashRepository } from 'src/modules/wash/infra/repositories/IWashRepository';
-import { WashRepository } from 'src/modules/wash/infra/repositories/WashRepository';
+import { IWashRepository } from '../../modules/wash/infra/repositories/IWashRepository'
+import { WashRepository } from '../../modules/wash/infra/repositories/WashRepository' 
 
 
 
@@ -28,6 +28,6 @@ container.registerSingleton<ICarsRepository>(
 );
 
 container.registerSingleton<IWashRepository>(
-    "WashRepository", 
+    "WashRepository",
     WashRepository
-);
+)

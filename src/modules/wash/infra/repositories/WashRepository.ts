@@ -1,6 +1,6 @@
 import { getRepository, Repository } from "typeorm";
 import { IWashDTO } from "../../dto/IWashDTO";
-import { Wash } from "../entitites/wash";
+import { Wash } from '../entities/Wash'
 import { IWashRepository } from "./IWashRepository";
 
 
