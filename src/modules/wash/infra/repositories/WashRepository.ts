@@ -8,7 +8,7 @@ import { IWashRepository } from "./IWashRepository";
 class WashRepository implements IWashRepository{
     private repository: Repository<Wash>
 
-    constructor(){
+    constructor(){ 
         this.repository = getRepository(Wash);
     }
     async create(request: IWashDTO): Promise<void> {
