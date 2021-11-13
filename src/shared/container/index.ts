@@ -9,6 +9,8 @@ import { ICarsRepository } from '../../modules/cars/infra/repositories/ICarsRepo
 import { CarsRepository } from '../../modules/cars/infra/repositories/CarsRepository'
 import { IWashRepository } from '../../modules/wash/infra/repositories/IWashRepository'
 import { WashRepository } from '../../modules/wash/infra/repositories/WashRepository' 
+import { ITokenRepository } from 'src/modules/employees/infra/repositories/ITokenRepository';
+import { TokenRepository } from 'src/modules/employees/infra/repositories/TokenRepository';
 
 
 
@@ -30,4 +32,9 @@ container.registerSingleton<ICarsRepository>(
 container.registerSingleton<IWashRepository>(
     "WashRepository",
     WashRepository
+);
+
+container.registerSingleton<ITokenRepository>(
+    "TokenRepository",
+    TokenRepository
 )
