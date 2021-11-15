@@ -41,6 +41,12 @@ class WashRepository implements IWashRepository{
     return result
 }
 
+async deleteById(id: string): Promise<void> {
+    const wash = await this.repository.findOne(id)
+
+     await this.repository.remove(wash)
+}
 
 }
+
 export { WashRepository }

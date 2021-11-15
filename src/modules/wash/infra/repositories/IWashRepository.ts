@@ -8,6 +8,7 @@ interface IWashRepository {
     getAll(): Promise<Wash[]>
     findById(id:string): Promise<Wash>
     updateById(id: string, request: IWashDTO): Promise<Wash>
+    deleteById(id: string): Promise<void>
     }
 
 

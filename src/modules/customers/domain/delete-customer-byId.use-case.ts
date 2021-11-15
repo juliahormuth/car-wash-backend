@@ -3,10 +3,6 @@ import { ICustomersRepository } from "../infra/repositories/ICustomersRepository
 
 
 
-
-
-
-
 @injectable()
 class DeleteCustomersByIdUseCase {
     
