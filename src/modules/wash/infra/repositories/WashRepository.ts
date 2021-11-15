@@ -20,5 +20,14 @@ class WashRepository implements IWashRepository{
         await this.repository.save(wash)
     }
 
+    async getAll(): Promise<Wash[]> {
+        const wash = await this.repository.find();
+        return wash;
+    }
+    async findById(id:string): Promise<Wash> {
+        const wash = await this.repository.findOne(id)
+        return wash;
+   }
+
 }
 export { WashRepository }
