@@ -24,10 +24,23 @@ class WashRepository implements IWashRepository{
         const wash = await this.repository.find();
         return wash;
     }
+
     async findById(id:string): Promise<Wash> {
         const wash = await this.repository.findOne(id)
         return wash;
    }
+
+   async updateById(id: string, request: IWashDTO): Promise<Wash>{
+
+    const wash = await this.repository.findOne(id)
+
+    this.repository.merge(wash, request)
+
+    const result = await this.repository.save(wash)
+
+    return result
+}
+
 
 }
 export { WashRepository }
