@@ -21,7 +21,7 @@ washRouter.post('/', createWashController.handle)
 washRouter.get('/', getWashController.handle)
 washRouter.get('/:id', getByIdWashController.handle)
 washRouter.put('/:id', updateByIdWashController.handle)
-washRouter.delete(':/id', deleteByIdWashController.handle)
+washRouter.delete('/:id', deleteByIdWashController.handle)
 
 
 
