@@ -15,6 +15,7 @@ class ServicesRepository implements IServicesRepository{
             customer_id: request.customer_id,
             car_id: request.car_id,
             wash_id: request.wash_id,
+            wash_type: request.wash_type,
             value: request.value,
             start_wash: request.start_wash,
             expected_end_wash: request.expected_end_wash,

@@ -6,12 +6,12 @@ import { CreateServicesUseCase } from './create-services.use-case';
 class CreateServicesController {
 
     async handle(request: Request, response: Response): Promise<Response> {
-        const {customer_id, car_id, wash_id, value, start_wash, expected_end_wash } =  request.body;
+        const {customer_id, car_id, wash_id, wash_type, value, start_wash, expected_end_wash } =  request.body;
 
         const servicesUseCase = container.resolve(CreateServicesUseCase);
 
         await servicesUseCase.execute({
-            customer_id, car_id, wash_id, value, start_wash, expected_end_wash
+            customer_id, car_id, wash_id, wash_type, value, start_wash, expected_end_wash
         });
 
         return response.status(201).send();

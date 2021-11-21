@@ -3,6 +3,7 @@ interface IServicesDTO {
     customer_id: string;
     car_id: string;
     wash_id: string;
+    wash_type: string;
     value: number;
     start_wash: Date;
     expected_end_wash: Date;

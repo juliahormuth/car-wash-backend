@@ -15,6 +15,7 @@ class CreateServicesUseCase {
       customer_id,
       car_id,
       wash_id,
+      wash_type,
       value,
       start_wash,
       expected_end_wash
@@ -24,6 +25,7 @@ class CreateServicesUseCase {
             customer_id,
             car_id,
             wash_id,
+            wash_type,
             value,
             start_wash,
             expected_end_wash

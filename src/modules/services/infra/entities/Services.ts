@@ -5,7 +5,7 @@ import { Customers } from '../../../customers/infra/entities/Customers'
 import { Wash } from '../../../wash/infra/entities/Wash'
 
 
-@Entity("services")
+@Entity("servicesTeste")
 class Services {
 
 @PrimaryColumn()
@@ -32,6 +32,9 @@ wash: Wash;
 
 @Column()
 wash_id: string;
+
+@Column()
+wash_type: string;
 
 @Column()
 value: number;
