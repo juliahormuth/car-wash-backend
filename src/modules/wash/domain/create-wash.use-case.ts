@@ -14,12 +14,22 @@ class CreateWashUseCase {
     async execute( { 
        washType, 
        value,
+       start_wash,
+       expected_end_wash,
+       customer,
+       car
         }: IWashDTO): Promise<void> {
         
             const wash = await this.washRepository.create({
                 washType,
-                value
+                value,
+                start_wash,
+                expected_end_wash,
+                customer,
+                car
             })
+
+            return wash;
         }
 }
 

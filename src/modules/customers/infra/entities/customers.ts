@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryColumn, OneToMany} from 'typeorm';
+import { Wash } from '../../../wash/infra/entities/Wash';
 
 @Entity("customers")
 class Customers {
@@ -18,6 +19,9 @@ address: string;
 
 @Column()
 phoneNumber: string;
+
+@OneToMany(() => Wash, wash => wash.customer)
+washes: Wash[];
 
 @CreateDateColumn()
 created_at: Date;

@@ -48,7 +48,7 @@ class AuthenticateEmployeeUseCase {
         const tokenReturn: IResponse = {
             token,
             employee: {
-                name: employee.document,
+                name: employee.name,
                 email: employee.email
             }
         }

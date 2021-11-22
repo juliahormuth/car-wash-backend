@@ -11,9 +11,6 @@ import { IWashRepository } from '../../modules/wash/infra/repositories/IWashRepo
 import { WashRepository } from '../../modules/wash/infra/repositories/WashRepository' 
 import { ITokenRepository } from '../../modules/employees/infra/repositories/ITokenRepository'
 import { TokenRepository } from '../../modules/employees/infra/repositories/TokenRepository'
-import { IServicesRepository } from '../../modules/services/infra/repositories/IServicesRepository'
-import { ServicesRepository } from '../../modules/services/infra/repositories/ServicesRepository'
-
 
 
 container.registerSingleton<IEmployeesRepository>(
@@ -39,9 +36,4 @@ container.registerSingleton<IWashRepository>(
 container.registerSingleton<ITokenRepository>(
     "TokenRepository",
     TokenRepository
-)
-
-container.registerSingleton<IServicesRepository>(
-    "ServicesRepository",
-      ServicesRepository
 )

@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryColumn, OneToMany} from 'typeorm';
+import { Wash } from '../../../wash/infra/entities/Wash';
 
 @Entity("cars")
 class Cars {
@@ -21,6 +22,9 @@ size: string;
 
 @Column()
 color: string;
+
+@OneToMany(() => Wash, wash => wash.car)
+washes: Wash[];
 
 @CreateDateColumn({nullable: true})
 created_at: Date;

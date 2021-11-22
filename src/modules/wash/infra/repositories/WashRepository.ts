@@ -14,7 +14,11 @@ class WashRepository implements IWashRepository{
     async create(request: IWashDTO): Promise<void> {
         const wash = this.repository.create({
          washType: request.washType,
-         value: request.value
+         value: request.value,
+         start_wash: request.start_wash,
+         expected_end_wash: request.expected_end_wash,
+         customer: request.customer,
+         car: request.car
         });
 
         await this.repository.save(wash)
@@ -30,23 +34,23 @@ class WashRepository implements IWashRepository{
         return wash;
    }
 
-   async updateById(id: string, request: IWashDTO): Promise<Wash>{
+//    async updateById(id: string, request: IWashDTO): Promise<Wash>{
 
-    const wash = await this.repository.findOne(id)
+//     const wash = await this.repository.findOne(id)
 
-    this.repository.merge(wash, request)
+//     this.repository.merge(wash, request)
 
-    const result = await this.repository.save(wash)
+//     const result = await this.repository.save(wash)
 
-    return result
+//     return result
 }
 
-async deleteById(id: string): Promise<void> {
-    const wash = await this.repository.findOne(id)
+// async deleteById(id: string): Promise<void> {
+//     const wash = await this.repository.findOne(id)
 
-     await this.repository.remove(wash)
-}
+//      await this.repository.remove(wash)
+// }
 
-}
+// }
 
 export { WashRepository }
