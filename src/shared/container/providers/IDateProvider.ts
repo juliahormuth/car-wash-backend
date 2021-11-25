@@ -1,11 +1,10 @@
 
-
 interface IDateProvider {
-   /* compareInHours(start_date: Date, end_date: Date): number
-    convertToUtc(date: Date): string
-    dateNow(): Date
-   */
-  compareHours(start_date: Date)
+    addSimpleWash(start_wash: Date): Date;
+    addFullWash(start_wash: Date): Date;
+    addDetailedWash(start_wash: Date): Date;
+    createDateNow(): Date;
+    convertToBrazilianHour(start_wash: Date): Date;
 }
 
 export { IDateProvider }

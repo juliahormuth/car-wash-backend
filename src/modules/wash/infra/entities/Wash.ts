@@ -24,14 +24,14 @@ customer: Customers;
 car: Cars;
 
 @Column()
-start_wash: number;
+start_wash: Date;
 
 @Column()
-expected_end_wash: number;
+expected_end_wash: Date;
 
 
 @CreateDateColumn()
-created_at: number;
+created_at: Date;
 
 
 constructor() {

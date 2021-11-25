@@ -7,14 +7,14 @@ import { container } from 'tsyringe';
 class CreateWashController {
 
     async handle(request: Request, response: Response): Promise<Response> {
-        const {washType, value, start_wash, expected_end_wash, customer, car } =  request.body;
+        const {washType, value, customer, car } =  request.body;
 
         const createWashUseCase = container.resolve(CreateWashUseCase);
 
-        await createWashUseCase.execute({
-            washType, value, start_wash,expected_end_wash ,customer,car
+       const result = await createWashUseCase.execute({
+            washType, value, customer,car
         });
-        return response.status(201).json("Lavagem criada com sucesso!");
+        return response.status(201).json(result);
     }
 }
 

@@ -1,45 +1,29 @@
 import { IDateProvider } from "./IDateProvider";
-//import  dayjs, { Dayjs } from 'dayjs';
-//import utc from 'dayjs/plugin/utc';
-import { moment } from 'moment'
-
-const format = 'hh:mm:ss'
-//const start_date = '08:34:00'
+import  dayjs from 'dayjs'
 
 class DateProvider implements IDateProvider {
-   
- 
- /*   compareInHours(start_date: Date, end_date: Date): number {
-        const end_date_utc = this.convertToUtc(end_date)
 
-        const start_date_utc = this.convertToUtc(start_date)
+  // Horários de acordo com cada Lavagem
 
-        return dayjs(end_date).diff(start_date, "hours")
-    }
+  addSimpleWash(start_wash: Date): Date {
+    return dayjs(start_wash).add(1, 'hour').toDate()
+  }
 
-    convertToUtc(date: Date): string {
-      return dayjs(date).utc().local().format()
-    }
-    
-    dateNow(): Date {
-        return dayjs().toDate();
-    } */
+  addFullWash(start_wash: Date): Date {
+    return dayjs(start_wash).add(2, 'hour').toDate()
+  }
 
+  addDetailedWash(start_wash: Date): Date {
+    return dayjs(start_wash).add(3, 'hour').toDate()
+  }
 
-    compareHours(start_date: Date) {
-       const resultTime = moment(start_date, format)
+  createDateNow(): Date {
+    return dayjs().toDate()
+  }
 
-       const result = resultTime
-    }
-
-
-
-
-    
-
+  convertToBrazilianHour(start_wash: Date): Date {
+    return dayjs(start_wash).subtract(3, 'hour').toDate()
+  }
 }
-
-
-
 
 export { DateProvider }
