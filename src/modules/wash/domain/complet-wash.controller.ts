@@ -1,21 +1,21 @@
 import { Request, Response } from 'express'
-import { CreateWashUseCase } from '../domain/create-wash.use-case';
+import { CompletWashUseCase } from './complet-wash.use-case';
 import { container } from 'tsyringe';
 
 
 
-class CreateWashController {
+class CompletWashController {
 
     async handle(request: Request, response: Response): Promise<Response> {
         const { customer, car } =  request.body;
 
-        const createWashUseCase = container.resolve(CreateWashUseCase);
+        const createWashUseCase = container.resolve(CompletWashUseCase);
 
        const result = await createWashUseCase.execute({
-           customer,car
+            customer,car
         });
         return response.status(201).json(result);
     }
 }
 
-export { CreateWashController };
+export { CompletWashController };

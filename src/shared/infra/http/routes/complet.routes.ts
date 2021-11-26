@@ -9,25 +9,16 @@ import { CompletWashController } from '../../../../modules/wash/domain/complet-w
 import { DetailWashController  } from '../../../../modules/wash/domain/detail-wash.controller.use-case'
 
 
-const washRouter = Router();
+const completRouter = Router();
 
 
-const createWashController = new CreateWashController()
-const getWashController = new GetWashController()
-const getByIdWashController = new GetByIdWashController()
-const updateByIdWashController = new UpdateWashController()
-const deleteByIdWashController = new  DeleteByIdWashController()
+
 
 const completWashController = new CompletWashController()
-const detailWashController = new DetailWashController()
+
 
 
 washRouter.use(ensureAuthenticated)
-washRouter.post('/simple', createWashController.handle)
-washRouter.get('/', getWashController.handle)
-washRouter.get('/:id', getByIdWashController.handle)
-washRouter.put('/:id', updateByIdWashController.handle)
-washRouter.delete('/:id', deleteByIdWashController.handle)
 washRouter.post('/complet', completWashController.handle)
 washRouter.post('/detail', detailWashController.handle)
 

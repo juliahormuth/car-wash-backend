@@ -8,7 +8,7 @@ import { AppError } from '../../../shared/errors/AppError';
 
 
 @injectable()
-class CreateWashUseCase {
+class  DetailWashUseCase {
     
     constructor(
         @inject("WashRepository")
@@ -45,11 +45,10 @@ class CreateWashUseCase {
 
             //  start_wash = await this.dateProvider.convertToBrazilianHour(start_wash)
             
-             expected_end_wash = await this.dateProvider.addSimpleWash(start_wash)
+             expected_end_wash = await this.dateProvider.addDetailedWash(start_wash)
 
-             washType = 'Simples'
-             value = 30
-
+             washType = 'Detalhada'
+             value = 120
 
                await this.washRepository.create({
                 washType,
@@ -62,4 +61,4 @@ class CreateWashUseCase {
    }
 }
 
-export { CreateWashUseCase }
+export { DetailWashUseCase }

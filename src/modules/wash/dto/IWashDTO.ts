@@ -11,8 +11,8 @@ import { Customers } from "src/modules/customers/infra/entities/Customers";
 
 interface IWashDTO {
     id?: string;
-    washType: string;
-    value: number;
+    washType?: string;
+    value?: number;
     start_wash?: Date;
     expected_end_wash?: Date;
     // customerId: string;
