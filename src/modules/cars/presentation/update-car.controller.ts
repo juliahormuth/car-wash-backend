@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { container } from 'tsyringe';
-import { UpdateCarsUseCase } from './update-car.use-case';
+import { UpdateCarsUseCase } from '../domain/update-car.use-case';
 
 
 

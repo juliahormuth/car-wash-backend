@@ -3,10 +3,6 @@ import { Customers } from '../infra/entities/Customers'
 import { ICustomersRepository } from "../infra/repositories/ICustomersRepository";
 
 
-
-
-
-
 @injectable()
 class GetByIdCustomersUseCase {
     

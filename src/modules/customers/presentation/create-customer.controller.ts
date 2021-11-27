@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { container } from "tsyringe";
-import { CreateCustomersUseCase } from "./create-customer.use-case";
+import { CreateCustomersUseCase } from "../domain/create-customer.use-case";
 
 class CreateCustomersController {
 

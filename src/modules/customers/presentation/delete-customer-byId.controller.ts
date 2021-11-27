@@ -1,6 +1,6 @@
 import {Request, Response } from 'express';
 import { container } from 'tsyringe';
-import { DeleteCustomersByIdUseCase } from './delete-customer-byId.use-case'
+import { DeleteCustomersByIdUseCase } from '../domain/delete-customer-byId.use-case'
 
 
 

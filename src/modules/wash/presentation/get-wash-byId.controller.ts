@@ -1,6 +1,6 @@
 import {Request, Response } from 'express';
 import { container } from 'tsyringe';
-import { GetByIdWashUseCase } from './get-wash-byId.use-case';
+import { GetByIdWashUseCase } from '../domain/get-wash-byId.use-case';
 
 
 

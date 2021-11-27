@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
-import { CreateCarsController } from '../../../../modules/cars/domain/create-cars.controller'
-import { GetByIdCarsController } from '../../../../modules/cars/domain/get-car-byId.controller'
-import { GetCarsController } from '../../../../modules/cars/domain/get-cars.controller'
-import { UpdateCarsController } from '../../../../modules/cars/domain/update-car.controller'
-import { DeleteByIdCarsController } from '../../,./../../../modules/cars/domain/delete-carById.controller'
+import { CreateCarsController } from '../../../../modules/cars/presentation/create-cars.controller'
+import { GetByIdCarsController } from '../../../../modules/cars/presentation/get-car-byId.controller'
+import { GetCarsController } from '../../../../modules/cars/presentation/get-cars.controller'
+import { UpdateCarsController } from '../../../../modules/cars/presentation/update-car.controller'
+import { DeleteByIdCarsController } from '../../../../modules/cars/presentation/delete-carById.controller'
 
 const carsRouter = Router();
 
